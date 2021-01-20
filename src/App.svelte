@@ -3,7 +3,6 @@
   import {queue, popFromQueue} from './QueueStore'
 
   let newLink
-  $: console.log(`newLink is: ${newLink}`)
 
   /**
    * Add a link to the queue from input bound to newLink
