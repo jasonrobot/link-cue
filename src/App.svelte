@@ -1,6 +1,6 @@
 <script>
   import Queue from './Queue.svelte'
-  import {queue, popFromQueue} from './QueueStore'
+  import {queue, popFromQueue, undo} from './QueueStore'
 
   let newLink
 
@@ -22,10 +22,16 @@
 </script>
 
 <input bind:value={newLink} on:keydown={keydownHandler}>
-<button id="add" on:click={addToQueue}>
+<button on:click={addToQueue}>
 	Add
 </button>
-<button id="pop" on:click={popFromQueue}>
+<button on:click={popFromQueue}>
 	Pop
+</button>
+<button on:click={undo}>
+  Undo
+</button>
+<button on:click={redo}>
+  Redo
 </button>
 <Queue/>
