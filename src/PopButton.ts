@@ -1,6 +1,6 @@
-import {h} from 'preact'
-import {connect} from 'react-redux'
-import {popLink} from './actions'
+import { h } from 'preact'
+import { connect } from 'react-redux'
+import { popLink } from './actions'
 
 const popButtonDispatch = {
     popLink
@@ -8,8 +8,8 @@ const popButtonDispatch = {
 
 function PopButton({
     popLink
-}) {
-    return h('button', {onclick: popLink}, 'Pop Link')
+}: any) {
+    return h('button', { onclick: popLink }, 'Pop Link')
 }
 
 export default connect(null, popButtonDispatch)(PopButton)
