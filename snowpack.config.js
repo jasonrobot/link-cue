@@ -3,23 +3,23 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-  mount: {
-    /* ... */
-  },
-  plugins: [
-    '@snowpack/plugin-typescript',
-  ],
-  packageOptions: {
-    /* ... */
-  },
-  devOptions: {
-    /* ... */
-  },
-  buildOptions: {
-    sourcemap: true,
-  },
-  alias: {
-    'react': 'preact/compat',
-    'react-dom': 'preact/compat',
-  },
+    mount: {
+        'src': '/link-cue'
+    },
+    plugins: [
+        '@snowpack/plugin-typescript',
+    ],
+    packageOptions: {
+        /* ... */
+    },
+    devOptions: {
+        /* ... */
+    },
+    buildOptions: {
+        sourcemap: true,
+    },
+    alias: {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+    },
 };
