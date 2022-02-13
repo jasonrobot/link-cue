@@ -1,0 +1,16 @@
+<label for="item-input">Add a link:</label>
+<input type="text" id="link-input" [formControl]="link" />
+<!-- <input type="text" id="item-input" #newItem> -->
+<button type="button" (click)="addNewItem(link.value)">
+    Add to parent's list
+</button>
+<div *ngIf="link.invalid && (link.dirty || link.touched)"
+     class="alert alert-danger">
+
+    <div *ngIf="link.errors?.['required']">
+        Url can not be empty.
+    </div>
+    <div *ngIf="link.errors?.['invalidUrl']">
+        Not a valid URL.
+    </div>
+</div>

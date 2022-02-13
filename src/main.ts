@@ -1,20 +1,12 @@
-import {h, render} from 'preact'
-import { Provider } from "react-redux"
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import {store} from './reducers'
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-import AddLink from './AddLink'
+if (environment.production) {
+  enableProdMode();
+}
 
-import Queue from './Queue'
-
-import PopButton from './PopButton'
-
-const app =
-    h('div', null,
-      h(AddLink, null),
-      h(PopButton, null),
-      h(Queue, null))
-
-const mainDiv = document.getElementById('main')
-
-if (mainDiv !== null) render(h(Provider, {store}, app), mainDiv)
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

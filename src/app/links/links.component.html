@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let link of links.slice(0, -1)">{{link}}</li>
+    <li>
+        <a target="_blank"
+           href="{{links[links.length - 1]}}"
+           (click)="removeLink()">
+            {{links[links.length - 1]}}
+        </a>
+    </li>
+</ul>
+<app-link-input (newLinkEvent)="addLink($event)"></app-link-input>
